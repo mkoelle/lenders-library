@@ -78,3 +78,7 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 ### Future Stories
 
 - Donation system for maintenance and replacment of damaged items.
+
+## Reading
+
+- [How to write a Vue.js app completely in TypeScript](https://blog.logrocket.com/how-to-write-a-vue-js-app-completely-in-typescript/)

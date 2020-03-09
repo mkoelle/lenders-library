@@ -2,6 +2,54 @@
 
 A system for people to share items they own, without giving them away.
 
+## Project setup
+
+``` shell
+npm install
+```
+
+### Compiles and hot-reloads for development
+
+``` shell
+npm run serve
+```
+
+### Compiles and minifies for production
+
+``` shell
+npm run build
+```
+
+### Run your unit tests
+
+``` shell
+npm run test:unit
+```
+
+### Run your end-to-end tests
+
+To run them in interactive mode:
+
+``` shell
+npm run test:e2e
+```
+
+To run the tests non-interactively:
+
+``` shell
+npm run test:e2e:ci
+```
+
+### Lints and fixes files
+
+``` shell
+npm run lint
+```
+
+### Customize configuration
+
+See [Configuration Reference](https://cli.vuejs.org/config/).
+
 ## Stories
 
 ### Base functionality

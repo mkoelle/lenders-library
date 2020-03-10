@@ -8,45 +8,19 @@
         <HelloWorld msg="Welcome to the Community Library!" />
       </div>
       <div class="column has-background-light">
-        <div class="box">
+        <div class="box" v-for="resource in resources" :key="resource.name">
           <article class="media">
             <figure class="media-left">
               <p class="image is-128x128">
-                <img src="./assets/placeholder.png" />
+                <img :src="resource.image" />
               </p>
             </figure>
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong>Article Name 1</strong>
-                  <br />Ut enim ad minim veniam Mandibuzz Braviary Pidgeotto
-                  Azelf Bronzong Vine Whip. Glitch City Rotom Machop Carvanha
-                  Koffing Koffing Relicanth Quagsire. Marsh Badge Croconaw
-                  Corphish Audino Hitmonchan Mew Pikachu. Charmeleon ex ea
-                  commodo Silcoon Magnemite I like shorts Seaking Minccino. V
-                  for victory Cacturne Badge Arcanine Sealeo Houndour Phanpy.
-                </p>
-              </div>
-            </div>
-          </article>
-        </div>
-        <div class="box">
-          <article class="media">
-            <figure class="media-left">
-              <p class="image is-128x128">
-                <img src="./assets/placeholder.png" />
-              </p>
-            </figure>
-            <div class="media-content">
-              <div class="content">
-                <p>
-                  <strong>Article Name 2</strong>
-                  <br />Hive Badge Dusknoir Venomoth Nuzleaf Dragon Rage Hive
-                  Badge Harden. Lorem ipsum dolor sit amet Keldeo Rage Unown
-                  Shiftry you're not wearing shorts Virizion. Yellow Goldeen
-                  Grass Floatzel Kanto Camerupt Graveler. Flying Dewott Gliscor
-                  Lilligant Brock Misdreavus Pidgeotto. Water Gun Rotom Litwick
-                  Donphan Wurmple Nincada Noctowl.
+                  <strong :content="resource.name" />
+                  <br />
+                  {{ resource.description }}
                 </p>
               </div>
             </div>
@@ -54,6 +28,18 @@
         </div>
       </div>
     </div>
+    <footer class="footer">
+      <div class="container">
+        <div class="content has-text-centered">
+          <p>
+            Footer footer footer
+            <br />
+            <a href="#">Terms of service</a> |
+            <a href="#">Privacy Policy</a>
+          </p>
+        </div>
+      </div>
+    </footer>
   </div>
 </template>
 
@@ -66,7 +52,26 @@ import HelloWorld from "./components/HelloWorld.vue";
     HelloWorld
   }
 })
-export default class App extends Vue {}
+export default class App extends Vue {
+  data() {
+    return {
+      resources: [
+        {
+          name: "Item 1",
+          image: "./img/placeholder.png",
+          description:
+            "Ut enim ad minim veniam Mandibuzz Braviary Pidgeotto Azelf Bronzong Vine Whip. Glitch City Rotom Machop Carvanha Koffing Koffing Relicanth Quagsire. Marsh Badge Croconaw Corphish Audino Hitmonchan Mew Pikachu. Charmeleon ex ea commodo Silcoon Magnemite I like shorts Seaking Minccino. V for victory Cacturne Badge Arcanine Sealeo Houndour Phanpy."
+        },
+        {
+          name: "Item 2",
+          image: "./img/placeholder.png",
+          description:
+            "Hive Badge Dusknoir Venomoth Nuzleaf Dragon Rage Hive Badge Harden. Lorem ipsum dolor sit amet Keldeo Rage Unown Shiftry you're not wearing shorts Virizion. Yellow Goldeen Grass Floatzel Kanto Camerupt Graveler. Flying Dewott Gliscor Lilligant Brock Misdreavus Pidgeotto. Water Gun Rotom Litwick Donphan Wurmple Nincada Noctowl."
+        }
+      ]
+    };
+  }
+}
 </script>
 
 <style lang="scss">

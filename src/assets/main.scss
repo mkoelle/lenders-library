@@ -1,6 +1,8 @@
 @charset "utf-8";
 @import "../../node_modules/bulma/bulma.sass";
 
+$wip_colour1: #ecf0f1;
+$wip_colour2: rgb(177, 245, 229);
 .wip {
   &:before {
     content: "";
@@ -11,10 +13,15 @@
     left: 0;
     top: 0;
   }
-  background: linear-gradient(
-    120deg,
-    rgba(41, 241, 195, 1),
-    rgba(255, 255, 255, 0.6)
+  background: -webkit-linear-gradient(
+    45deg,
+    $wip_colour1 25%,
+    $wip_colour2 25%,
+    $wip_colour2 50%,
+    $wip_colour1 50%,
+    $wip_colour1 75%,
+    $wip_colour2 75%
   );
+  background-size: 50px 50px;
   color: #444;
 }

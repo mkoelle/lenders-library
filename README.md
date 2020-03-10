@@ -4,25 +4,25 @@ A system for people to share items they own, without giving them away.
 
 ## Project setup
 
-``` shell
+```shell
 npm install
 ```
 
 ### Compiles and hot-reloads for development
 
-``` shell
+```shell
 npm run serve
 ```
 
 ### Compiles and minifies for production
 
-``` shell
+```shell
 npm run build
 ```
 
 ### Run your unit tests
 
-``` shell
+```shell
 npm run test:unit
 ```
 
@@ -30,19 +30,19 @@ npm run test:unit
 
 To run them in interactive mode:
 
-``` shell
+```shell
 npm run test:e2e
 ```
 
 To run the tests non-interactively:
 
-``` shell
+```shell
 npm run test:e2e:ci
 ```
 
 ### Lints and fixes files
 
-``` shell
+```shell
 npm run lint
 ```
 

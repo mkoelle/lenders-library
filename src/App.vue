@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Navbar></Navbar>
     <div class="columns">
       <div class="column has-text-centered">
         <figure class="image container is-128x128">
@@ -18,7 +19,7 @@
             <div class="media-content">
               <div class="content">
                 <p>
-                  <strong :content="resource.name" />
+                  <strong>{{ resource.name }}</strong>
                   <br />
                   {{ resource.description }}
                 </p>
@@ -46,10 +47,12 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import HelloWorld from "./components/HelloWorld.vue";
+import Navbar from "./components/Navbar.vue";
 
 @Component({
   components: {
-    HelloWorld
+    HelloWorld,
+    Navbar
   }
 })
 export default class App extends Vue {

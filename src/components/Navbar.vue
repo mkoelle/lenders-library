@@ -5,7 +5,7 @@
         <div class="navbar-brand">
           <a class="navbar-item" href="#">
             <img src="../assets/logo.png" width="28" height="28" />
-            <p class="h1">Library</p>
+            <p class="title is-3 nav-title">Library</p>
           </a>
           <div class="navbar-burger burger" @click="showNav = !showNav">
             <span></span>
@@ -43,7 +43,7 @@
         </div>
       </div>
     </nav>
-    <nav class="navbar is-white">
+    <nav class="navbar is-white is-hidden-mobile is-hidden-tablet-only">
       <div class="container">
         <div class="navbar-menu">
           <div class="navbar-start">
@@ -53,7 +53,7 @@
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
-              <input class="input" type="search" placeholder="Search forum..." />
+              <input class="input" type="search" placeholder="Search library..." />
             </div>
           </div>
         </div>
@@ -74,4 +74,8 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped></style>
+<style scoped>
+.title {
+  padding-left: 10px;
+}
+</style>

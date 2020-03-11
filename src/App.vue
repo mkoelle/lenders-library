@@ -5,7 +5,11 @@
       <div class="columns">
         <div class="column is-9">
           <div class="box content">
-            <article class="post" v-for="resource in resources" :key="resource.name">
+            <article
+              class="post"
+              v-for="resource in resources"
+              :key="resource.name"
+            >
               <h4>{{ resource.name }}</h4>
               <div class="media">
                 <div class="media-left">
@@ -55,6 +59,8 @@
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
 import Navbar from "./components/Navbar.vue";
+import { data } from "./shared/data";
+import { Resource } from "./shared/interfaces";
 
 @Component({
   components: {
@@ -62,23 +68,15 @@ import Navbar from "./components/Navbar.vue";
   }
 })
 export default class App extends Vue {
-  data() {
-    return {
-      resources: [
-        {
-          name: "Item 1",
-          image: "./img/placeholder.png",
-          description:
-            "Ut enim ad minim veniam Mandibuzz Braviary Pidgeotto Azelf Bronzong Vine Whip. Glitch City Rotom Machop Carvanha Koffing Koffing Relicanth Quagsire. Marsh Badge Croconaw Corphish Audino Hitmonchan Mew Pikachu. Charmeleon ex ea commodo Silcoon Magnemite I like shorts Seaking Minccino. V for victory Cacturne Badge Arcanine Sealeo Houndour Phanpy."
-        },
-        {
-          name: "Item 2",
-          image: "./img/placeholder.png",
-          description:
-            "Hive Badge Dusknoir Venomoth Nuzleaf Dragon Rage Hive Badge Harden. Lorem ipsum dolor sit amet Keldeo Rage Unown Shiftry you're not wearing shorts Virizion. Yellow Goldeen Grass Floatzel Kanto Camerupt Graveler. Flying Dewott Gliscor Lilligant Brock Misdreavus Pidgeotto. Water Gun Rotom Litwick Donphan Wurmple Nincada Noctowl."
-        }
-      ]
-    };
+  resources: Array<Resource> = new Array<Resource>();
+
+  public async loadResources(): Promise<void> {
+    this.resources = new Array<Resource>();
+    this.resources = (await data.getResources()) as Array<Resource>;
+  }
+
+  public async created(): Promise<void> {
+    await this.loadResources();
   }
 }
 </script>

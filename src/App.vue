@@ -32,11 +32,8 @@
             </article>
           </div>
         </div>
-        <div class="column has-text-centered">
-          <figure class="image container is-128x128">
-            <img alt="Vue logo" src="./assets/logo.png" />
-          </figure>
-          <HelloWorld msg="Welcome to the Community Library!" />
+        <div class="column has-text-centered wip">
+          <div class="box wip is-full-height"></div>
         </div>
       </div>
     </div>
@@ -57,12 +54,10 @@
 
 <script lang="ts">
 import { Component, Vue } from "vue-property-decorator";
-import HelloWorld from "./components/HelloWorld.vue";
 import Navbar from "./components/Navbar.vue";
 
 @Component({
   components: {
-    HelloWorld,
     Navbar
   }
 })

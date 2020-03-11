@@ -7,7 +7,7 @@
             <img src="../assets/logo.png" width="28" height="28" />
             <p class="title is-3 nav-title">Library</p>
           </a>
-          <div class="navbar-burger burger" @click="showNav = !showNav">
+          <div class="navbar-burger burger" @click="showNav = !showNav" data-target="topNav">
             <span></span>
             <span></span>
             <span></span>

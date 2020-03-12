@@ -7,7 +7,11 @@
             <img src="../assets/logo.png" width="28" height="28" />
             <p class="title is-3 nav-title">Library</p>
           </a>
-          <div class="navbar-burger burger" @click="showNav = !showNav" data-target="topNav">
+          <div
+            class="navbar-burger burger"
+            @click="showNav = !showNav"
+            data-target="topNav"
+          >
             <span></span>
             <span></span>
             <span></span>
@@ -53,7 +57,11 @@
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
-              <input class="input" type="search" placeholder="Search library..." />
+              <input
+                class="input"
+                type="search"
+                placeholder="Search library..."
+              />
             </div>
           </div>
         </div>

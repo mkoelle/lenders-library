@@ -1,4 +1,4 @@
-# Community Library
+# Lenders Library
 
 A system for people to share items they own, without giving them away.
 

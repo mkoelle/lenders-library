@@ -84,3 +84,8 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [How to write a Vue.js app completely in TypeScript](https://blog.logrocket.com/how-to-write-a-vue-js-app-completely-in-typescript/)
 - [Vue API calls in a smart way](https://medium.com/canariasjs/vue-api-calls-in-a-smart-way-8d521812c322)
 - [Setting Up API Mocking With Mirage JS And Vue.js](https://www.smashingmagazine.com/2020/02/api-mocking-mirage-vue-javascript/)
+
+## Possibly Similar Apps
+
+- [booktrader](https://github.com/joops75/booktrader)
+  - An app that facilitates the borrowing and lending of books between users.

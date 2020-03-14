@@ -16,10 +16,10 @@ module.exports = (on, config) => {
   // }))
 
   return Object.assign({}, config, {
-    "supportFile": "tests/cypress/support/index.js",
-    "fixturesFolder": "tests/cypress/fixtures",
-    "integrationFolder": "tests/cypress/specs",
-    "screenshotsFolder": "tests/cypress/screenshots",
-    "videosFolder": "tests/cypress/videos"
+    supportFile: "tests/cypress/support/index.js",
+    fixturesFolder: "tests/cypress/fixtures",
+    integrationFolder: "tests/cypress/specs",
+    screenshotsFolder: "tests/cypress/screenshots",
+    videosFolder: "tests/cypress/videos"
   });
 };

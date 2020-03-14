@@ -6,6 +6,7 @@ node_modules
 /tests/**/reports
 /tests/**/videos/
 /tests/**/screenshots/
+chromedriver.log
 
 # local env files
 .env.local

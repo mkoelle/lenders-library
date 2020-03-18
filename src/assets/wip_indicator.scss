@@ -1,5 +1,5 @@
-$wip_colour1: hsl(55, 31%, 41%);
-$wip_colour2: hsl(55, 31%, 86%);
+$wip_colour1: hsl(20, 20%, 26%);
+$wip_colour2:  hsl(20, 20%, 14%) ;
 .wip {
   background: -webkit-linear-gradient(
     45deg,
@@ -10,6 +10,5 @@ $wip_colour2: hsl(55, 31%, 86%);
     $wip_colour1 75%,
     $wip_colour2 75%
   );
-  background-size: 50px 50px;
-  color: #444;
+  background-size: 40px 40px;
 }

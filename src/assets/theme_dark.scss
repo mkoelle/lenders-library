@@ -1,0 +1,43 @@
+@import "./colors.scss";
+
+$scheme-main: $dark;
+$scheme-main-bis: $dark-bis;
+$scheme-main-ter: $dark-ter;
+$scheme-invert: $light;
+$scheme-invert-bis: $light-bis;
+$scheme-invert-ter: $light-ter;
+
+$background: $dark-ter;
+
+$border: $mid-darker;
+$border-hover: $mid-dark;
+$border-light: $mid-darker;
+$border-light-hover: $mid-dark;
+
+// Text colors
+$text: $mid-light;
+$text-invert: $mid-darker;
+$text-light: $mid;
+$text-strong: $light;
+
+// Link colors
+$link-hover: $light;
+$link-hover-border: $mid-dark;
+
+$link-focus: $light;
+$link-focus-border: $blue;
+
+$link-active: $light;
+$link-active-border: $mid-light;
+
+.bd-navbar{
+  background-color: $scheme-main-bis;
+
+  &.has-shadow{
+    box-shadow: none;
+  }
+}
+
+body {
+    background: $dark-ter;
+}

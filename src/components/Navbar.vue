@@ -1,6 +1,6 @@
 <template>
   <div>
-    <nav class="navbar is-white topNav">
+    <nav class="navbar topNav">
       <div class="container">
         <div class="navbar-brand">
           <a class="navbar-item" href="#">
@@ -34,7 +34,7 @@
                   </a>
                 </p>
                 <p class="control">
-                  <a class="button is-small is-info is-outlined">
+                  <a class="button is-small login">
                     <span class="icon">
                       <i class="fa fa-user"></i>
                     </span>
@@ -47,7 +47,7 @@
         </div>
       </div>
     </nav>
-    <nav class="navbar is-white is-hidden-mobile is-hidden-tablet-only">
+    <nav class="navbar is-hidden-mobile is-hidden-tablet-only">
       <div class="container">
         <div class="navbar-menu">
           <div class="navbar-start">
@@ -82,7 +82,18 @@ export default Vue.extend({
 });
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+.login{
+  color: hsl(57, 55%, 60%);
+  border-color: hsl(57, 55%, 60%);
+}
+
+.topNav {
+  border-top: 5px solid hsl(57, 46%, 50%);;
+  .container {
+    border-bottom: 1px solid #e6eaee;
+  }
+}
 .title {
   padding-left: 10px;
 }

@@ -90,17 +90,9 @@ html,
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif;
-  background: #f2f6fa;
-}
-
-.topNav {
-  border-top: 5px solid #3498db;
 }
 .container .columns {
   margin: 1rem 0;
-}
-.topNav .container {
-  border-bottom: 1px solid #e6eaee;
 }
 .media-left img {
   border-radius: 20%;

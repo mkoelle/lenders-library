@@ -85,6 +85,13 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 - [Vue API calls in a smart way](https://medium.com/canariasjs/vue-api-calls-in-a-smart-way-8d521812c322)
 - [Setting Up API Mocking With Mirage JS And Vue.js](https://www.smashingmagazine.com/2020/02/api-mocking-mirage-vue-javascript/)
 
+### Style
+
+- [Combine sass and css variables](https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables)
+- [CSS4 variables and sass](https://codepen.io/jakealbaugh/post/css4-variables-and-sass)
+- [Theming css variables in scss](https://bcodes.io/blog/post/theming-css-variables-in-scss)
+- [CSS color theming](https://una.im/css-color-theming/)
+
 ## Possibly Similar Apps
 
 - [booktrader](https://github.com/joops75/booktrader)

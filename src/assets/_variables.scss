@@ -1,0 +1,41 @@
+
+// Themes CSS Variables
+$--theme-primary-hue: --theme-primary-hue;
+$--theme-primary-saturation: --theme-primary-saturation;
+$--theme-mid-hue: --theme-mid-hue;
+$--theme-mid-saturation: --theme-mid-saturation;
+$--theme-contrast-hue: --theme-contrast-hue;
+$--theme-contrast-saturation: --theme-contrast-saturation;
+
+$theme-map-dark: (
+  $--theme-primary-hue: 14,
+  $--theme-primary-saturation: 14%,
+  $--theme-mid-hue: 55,
+  $--theme-mid-saturation: 31%,
+  $--theme-contrast-hue: 174,
+  $--theme-contrast-saturation: 31%
+);
+
+$theme-map-light: (
+  $--theme-primary-hue: 14,
+  $--theme-primary-saturation: 14%,
+  $--theme-mid-hue: 55,
+  $--theme-mid-saturation: 31%,
+  $--theme-contrast-hue: 174,
+  $--theme-contrast-saturation: 31%
+);
+
+$color-primary: hsl(14, 14%, 14%);
+$color-primary-bis: hsl(14, 14%, 26%);
+$color-primary-ter: hsl(14, 14%, 36%);
+
+$color-mid-darker: hsl(55, 31%, 30%);
+$color-mid-dark: hsl(55, 31%, 41%);
+$color-mid: hsl(55, 31%, 50%);
+$color-mid-light: hsl(55, 31%, 60%);
+$color-mid-lighter: hsl(55, 31%, 86%);
+$color-mid-lightest: hsl(55, 31%, 93%);
+
+$color-contrast-ter: hsl(174, 31%, 91%);
+$color-contrast-bis: hsl(174, 31%, 95%);
+$color-contrast: hsl(174, 31%, 98%);

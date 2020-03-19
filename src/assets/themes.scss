@@ -1,0 +1,50 @@
+@import 'variables';
+@import 'mixins';
+
+:root.light {
+    @include spread-map($theme-map-light);
+}
+:root.dark {
+    @include spread-map($theme-map-dark);
+}
+
+$scheme-main: $color-primary;
+$scheme-main-bis: $color-primary-bis;
+$scheme-main-ter: $color-primary-ter;
+$scheme-invert: $color-contrast;
+$scheme-invert-bis: $color-contrast-bis;
+$scheme-invert-ter: $color-contrast-ter;
+
+$background: $color-primary-ter;
+
+$border: $color-mid-darker;
+$border-hover: $color-mid-dark;
+$border-light: $color-mid-darker;
+$border-light-hover: $color-mid-dark;
+
+// Text colors
+$text: $color-mid-light;
+$text-invert: $color-mid-darker;
+$text-light: $color-mid;
+$text-strong: $color-contrast;
+
+// Link colors
+$link-hover: $color-contrast;
+$link-hover-border: $color-mid-dark;
+
+$link-focus: $color-contrast;
+
+$link-active: $color-contrast;
+$link-active-border: $color-mid-light;
+
+.bd-navbar{
+  background-color: $scheme-main-bis;
+
+  &.has-shadow{
+    box-shadow: none;
+  }
+}
+
+body {
+    background: $color-primary-ter;
+}

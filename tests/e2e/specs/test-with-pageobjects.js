@@ -16,10 +16,8 @@ module.exports = {
     const app = homepage.section.app;
     app.assert.elementCount("@logo", 3);
     app.expect.section("@headline").to.be.visible;
-    app.expect
-      .section("@headline")
-      .text.to.match(/^Library$/);
+    app.expect.section("@headline").text.to.match(/^Library$/);
 
     browser.end();
-  },
+  }
 };

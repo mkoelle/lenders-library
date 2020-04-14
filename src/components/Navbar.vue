@@ -83,13 +83,13 @@ export default Vue.extend({
 </script>
 
 <style scoped lang="scss">
-.login{
+.login {
   color: hsl(57, 55%, 60%);
   border-color: hsl(57, 55%, 60%);
 }
 
 .topNav {
-  border-top: 5px solid hsl(57, 46%, 50%);;
+  border-top: 5px solid hsl(57, 46%, 50%);
   .container {
     border-bottom: 1px solid #e6eaee;
   }

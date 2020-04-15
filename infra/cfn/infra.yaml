@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: "2010-09-09"
-Description: "lenders-library - bucket, bucket policy, cloudfront, OAI, & associated DNS entry"
+Description: "lenders-library - bucket, bucket policy, cloudfront, OAI, certificate, & associated DNS entry"
 Parameters:
   HostedZoneId:
     Type: String
@@ -34,18 +34,18 @@ Resources:
     Properties:
       DistributionConfig:
         Comment: CDN for S3-backed website
-        # Aliases:
-        #   - !Sub "ll.${HostedZoneDomain}"
-        #   - !Sub "www.ll.${HostedZoneDomain}"
-        # ViewerCertificate:
-        #   AcmCertificateArn: !Ref AcmCertificateArn
-        #   MinimumProtocolVersion: "TLSv1.2_2018"
-        #   SslSupportMethod: "sni-only"
+        Aliases:
+          - !Sub "ll.${HostedZoneDomain}"
+          - !Sub "www.ll.${HostedZoneDomain}"
+        ViewerCertificate:
+          AcmCertificateArn: !Ref IssuedCertificate
+          MinimumProtocolVersion: "TLSv1.2_2018"
+          SslSupportMethod: "sni-only"
         DefaultCacheBehavior:
           ForwardedValues:
             QueryString: true
           TargetOriginId: s3origin
-          ViewerProtocolPolicy: allow-all
+          ViewerProtocolPolicy: "redirect-to-https"
         DefaultRootObject: index.html
         Enabled: true
         HttpVersion: http2
@@ -70,10 +70,61 @@ Resources:
           AliasTarget:
             HostedZoneId: Z2FDTNDATAQYW2
             DNSName: !GetAtt WebsiteCDN.DomainName
+  Certificate:
+    Type: Custom::Certificate
+    Properties:
+      DomainName: !Sub "ll.${HostedZoneDomain}"
+      SubjectAlternativeNames:
+      - Fn::Join:
+        - "."
+        - - "*"
+          - !Sub "ll.${HostedZoneDomain}"
+      ValidationMethod: DNS
+      ServiceToken:
+        Fn::Sub: arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:binxio-cfn-certificate-provider
+  IssuedCertificate:
+    Type: Custom::IssuedCertificate
+    Properties:
+      CertificateArn:
+        Ref: Certificate
+      ServiceToken:
+        Fn::Sub: arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:binxio-cfn-certificate-provider
+  CertificateDNSRecord:
+    Type: Custom::CertificateDNSRecord
+    Properties:
+      CertificateArn:
+        Ref: Certificate
+      DomainName: !Sub "ll.${HostedZoneDomain}"
+      ServiceToken:
+        Fn::Sub: arn:aws:lambda:${AWS::Region}:${AWS::AccountId}:function:binxio-cfn-certificate-provider
+  DomainValidationRecord:
+    Type: AWS::Route53::RecordSetGroup
+    Properties:
+      HostedZoneId:
+        Ref: HostedZoneId
+      RecordSets:
+      - Name:
+          Fn::GetAtt:
+          - CertificateDNSRecord
+          - Name
+        Type:
+          Fn::GetAtt:
+          - CertificateDNSRecord
+          - Type
+        TTL: '60'
+        Weight: 1
+        SetIdentifier:
+          Ref: Certificate
+        ResourceRecords:
+        - Fn::GetAtt:
+          - CertificateDNSRecord
+          - Value
 Outputs:
   BucketName:
     Description: "S3 Bucket Name"
     Value: !Ref WebsiteContent
+    Export:
+      Name: lenders-library-content-bucket
   DistributionId:
     Description: "CloudFront Distribution ID"
     Value: !Ref WebsiteCDN

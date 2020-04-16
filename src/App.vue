@@ -57,12 +57,12 @@
 </template>
 
 <script lang="ts">
-import { createComponent, ref } from "@vue/composition-api";
+import { defineComponent, ref } from "@vue/composition-api";
 import Navbar from "./components/Navbar.vue";
 import { data } from "./shared/data";
 import { Resource } from "./shared/interfaces";
 
-export default createComponent({
+export default defineComponent({
   components: {
     Navbar
   },

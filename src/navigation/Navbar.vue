@@ -3,10 +3,10 @@
     <nav class="navbar topNav">
       <div class="container">
         <div class="navbar-brand">
-          <a class="navbar-item" href="#">
+          <router-link class="navbar-item" to="/">
             <img src="../assets/logo.png" width="28" height="28" />
             <p class="title is-3 nav-title">Library</p>
-          </a>
+          </router-link>
           <div
             class="navbar-burger burger"
             @click="showNav = !showNav"
@@ -19,7 +19,7 @@
         </div>
         <div id="topNav" class="navbar-menu" :class="{ 'is-active': showNav }">
           <div class="navbar-start">
-            <a class="navbar-item" href="#">Home</a>
+            <router-link class="navbar-item" to="/">Home</router-link>
             <a class="navbar-item" href="#">Tabs</a>
           </div>
           <div class="navbar-end">
@@ -54,7 +54,7 @@
             <a class="navbar-item is-active" href="#">Popular</a>
             <a class="navbar-item" href="#">Recent</a>
             <a class="navbar-item" href="#">Rising</a>
-            <a class="navbar-item" href="#">Catalog</a>
+            <router-link class="navbar-item" to="/catalog">Catalog</router-link>
           </div>
           <div class="navbar-end">
             <div class="navbar-item">

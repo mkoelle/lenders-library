@@ -19,7 +19,13 @@
         </div>
         <div id="topNav" class="navbar-menu" :class="{ 'is-active': showNav }">
           <div class="navbar-start">
-            <router-link class="navbar-item" to="/" exact active-class="is-active">Home</router-link>
+            <router-link
+              class="navbar-item"
+              to="/"
+              exact
+              active-class="is-active"
+              >Home</router-link
+            >
             <a class="navbar-item" href="#">Tabs</a>
           </div>
           <div class="navbar-end">
@@ -54,7 +60,13 @@
             <a class="navbar-item" href="#">Popular</a>
             <a class="navbar-item" href="#">Recent</a>
             <a class="navbar-item" href="#">Rising</a>
-            <router-link class="navbar-item" to="/catalog" exact active-class="is-active">Catalog</router-link>
+            <router-link
+              class="navbar-item"
+              to="/catalog"
+              exact
+              active-class="is-active"
+              >Catalog</router-link
+            >
           </div>
           <div class="navbar-end">
             <div class="navbar-item">
